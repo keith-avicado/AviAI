@@ -35,6 +35,7 @@ public sealed class JiraAssistantProjectTests
             .ToList();
 
         Assert.Contains(@"scripts\jira\Get-JiraTicket.ps1", contentIncludes);
+        Assert.Contains(@"scripts\jira\config.jira.json", contentIncludes);
     }
 
     /// <summary>
@@ -51,6 +52,30 @@ public sealed class JiraAssistantProjectTests
         Assert.Contains("[string]$IssueKey", scriptContents);
         Assert.Contains("Invoke-RestMethod", scriptContents);
         Assert.Contains("/rest/api/latest/issue/", scriptContents);
+    }
+
+    /// <summary>
+    /// Confirms that the Jira config file contains the expected default host name.
+    /// </summary>
+    [Fact]
+    public void JiraConfigFile_ContainsConfiguredHostName()
+    {
+        var configPath = GetRepoFile("src", "AviAI.Server", "scripts", "jira", "config.jira.json");
+        var configContents = File.ReadAllText(configPath);
+
+        Assert.Contains("\"baseUrl\": \"https://avicadocts.atlassian.net/\"", configContents);
+    }
+
+    /// <summary>
+    /// Confirms that the README documents the Jira config file location.
+    /// </summary>
+    [Fact]
+    public void Readme_ExplainsJiraConfigFileLocation()
+    {
+        var readmePath = GetRepoFile("README.md");
+        var readmeContents = File.ReadAllText(readmePath);
+
+        Assert.Contains("src/AviAI.Server/scripts/jira/config.jira.json", readmeContents);
     }
 
     private static string GetRepoFile(params string[] pathSegments)

@@ -13,6 +13,7 @@ Repository automation scripts are written in PowerShell.
 ### Read a Jira Ticket
 
 The Jira ticket reader script lives at [`src/AviAI.Server/scripts/jira/Get-JiraTicket.ps1`](src/AviAI.Server/scripts/jira/Get-JiraTicket.ps1).
+The Jira config file lives at [`src/AviAI.Server/scripts/jira/config.jira.json`](src/AviAI.Server/scripts/jira/config.jira.json) and currently stores the default Jira host.
 
 1. Set the Jira API key in your environment.
 

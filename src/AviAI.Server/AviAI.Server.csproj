@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="scripts\jira\config.jira.json" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="scripts\jira\Get-JiraTicket.ps1" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
