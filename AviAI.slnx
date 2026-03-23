@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Copilot/">
+    <File Path=".github/copilot-instructions.md" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/AviAI.Server/AviAI.Server.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AviAI.Tests/AviAI.Tests.csproj" />
+  </Folder>
+</Solution>
