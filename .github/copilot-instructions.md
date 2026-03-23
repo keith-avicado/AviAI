@@ -78,7 +78,8 @@ Follow these steps for every change request in this project, in order:
 8.4. Use the conventional commits format: `type(scope): short description`.
 8.5. Example: `feat(server): add AppDbContext with Npgsql EF Core provider`.
 8.6. Example: `fix(tests): correct assembly reference check in ServerReferenceTests`.
-8.7. Do not leave changes staged but uncommitted.
+8.7. Run `git push` after committing so the change is published to the configured remote.
+8.8. Do not leave changes staged but uncommitted.
 
 9. Run all unit tests before calling the change complete.
 9.1. Execute `dotnet test`.
